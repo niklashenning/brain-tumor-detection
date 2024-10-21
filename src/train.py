@@ -15,6 +15,9 @@ training_dataloader = DataLoader(training_data, batch_size=32, shuffle=True)
 validation_dataloader = DataLoader(validation_data, batch_size=32, shuffle=False)
 
 model = Model()
+if torch.cuda.is_available():
+    model = model.to(torch.device('cuda'))
+
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
@@ -22,6 +25,10 @@ epochs = 50
 
 for epoch in range(epochs):
     for images, labels in training_dataloader:
+        if torch.cuda.is_available():
+            images = images.to(torch.device('cuda'))
+            labels = labels.to(torch.device('cuda'))
+
         optimizer.zero_grad()
         outputs = model(images)
         loss = criterion(outputs, labels)
@@ -36,6 +43,10 @@ correct = 0
 
 with torch.no_grad():
     for images, labels in validation_dataloader:
+        if torch.cuda.is_available():
+            images = images.to(torch.device('cuda'))
+            labels = labels.to(torch.device('cuda'))
+
         outputs = model(images)
         _, predicted = torch.max(outputs.data, 1)
         correct += (predicted == labels).sum().item()
