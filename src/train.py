@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from matplotlib import pyplot as plt
 from torch.utils.data import DataLoader, random_split
 from model import Model
 from dataset import BrainTumorDataset
@@ -22,6 +23,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 epochs = 50
+losses = []
 
 for epoch in range(epochs):
     for images, labels in training_dataloader:
@@ -35,6 +37,7 @@ for epoch in range(epochs):
         loss.backward()
         optimizer.step()
 
+    losses.append(loss.item())
     print('Epoch [{}/{}], Loss: {:.6f}'.format(epoch + 1, epochs, loss.item()))
 
 
@@ -53,3 +56,10 @@ with torch.no_grad():
 
 accuracy = 100 * correct / validation_size
 print('Test Accuracy: {:.2f}% ({}/{})'.format(accuracy, correct, validation_size))
+
+
+plt.get_current_fig_manager().set_window_title('Training')
+plt.plot(range(epochs), losses)
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.show()
