@@ -12,7 +12,7 @@ class BrainTumorDataset(Dataset):
         self.transform = transforms.Compose([
             transforms.Resize((256, 256)),
             transforms.ToTensor(),
-            transforms.Normalize((1,), (1,))
+            transforms.Normalize([0.485], [0.229])
         ])
 
     def __len__(self):
