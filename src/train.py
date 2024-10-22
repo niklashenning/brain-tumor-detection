@@ -22,7 +22,7 @@ if torch.cuda.is_available():
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-epochs = 50
+epochs = 20
 losses = []
 
 for epoch in range(epochs):
