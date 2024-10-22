@@ -20,7 +20,30 @@ for visualizing the training results.
 
 
 ## Dataset
-...
+The dataset contains 7023 MRI scans of brains taken from different angles. Some of the brains
+are healthy and others have tumors of different types (Glioma, Meningioma, or Pituitary adenoma).
+Most of the images are 512x512 px in size but some of them have different / unique sizes
+and aspect ratios.
+
+<ins>Glioma:</ins><br>
+A glioma is a type of tumor that originates from glial cells in the brain or spinal cord.
+Gliomas typically appear as areas of abnormal signal intensity. They may present as well-defined
+or irregular masses, often with surrounding edema (swelling) in the brain tissue.
+
+<ins>Meningioma:</ins><br>
+A meningioma is a type of tumor that arises from the meninges, the protective membranes
+that cover the brain and spinal cord. Meningiomas typically appear as well-defined,
+extra-axial masses, meaning they are located outside the brain tissue itself.
+They often have a characteristic "dural tail", which is a thickening of the dura mater
+(the outer layer of the meninges) adjacent to the tumor.
+
+<ins>Pituitary adenoma:</ins><br>
+A pituitary adenoma is a tumor that arises from the pituitary gland, which is 
+located at the base of the brain. A pituitary adenoma typically appears as a well-defined
+mass in the region of the pituitary gland. The size of the adenoma can vary, and larger
+tumors may cause displacement of surrounding structures, such as the optic chiasm. 
+In some cases, the adenoma may also cause enlargement of the sella turcica,
+the bony cavity that houses the pituitary gland.
 
 
 ## Results
