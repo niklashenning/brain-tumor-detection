@@ -24,7 +24,26 @@ for visualizing the training results.
 
 
 ## Results
-...
+The neural network was trained for 20 epochs with a learning rate of 0.001 using Adam
+as the optimizer and CrossEntropyLoss as the criterion. Training was done on 80%
+of the dataset while the remaining 20% were used to validate the results.
+
+The model achieved an accuracy of 94.23% on the validation data.
+
+```
+Test Accuracy: 94.23% (1324/1405)
+```
+
+| Epoch | Loss     |
+|-------|----------|
+| 1     | 0.655658 |
+| 5     | 0.002233 |
+| 10    | 0.000839 |
+| 15    | 0.004388 |
+| 20    | 0.000002 |
+
+<img src="https://github.com/user-attachments/assets/97728e8e-b752-4d70-8eec-3143c35db4b6" width="500">
+
 
 ## License
 This software is licensed under the [MIT license](LICENSE).
